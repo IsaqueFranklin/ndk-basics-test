@@ -40,7 +40,7 @@ const Search = () => {
       const pubkey = decodedNpub.data;
 
       filter0 = kind0Filter(pubkey); // TODO: search for profile (kind 0) along with kind 1 events authored by this pubkey
-      filter1 = kind1Filter(pubkey);
+      //filter1 = kind1Filter(pubkey);
     } else if (query.startsWith("note")) {
       const decodedNote = nip19.decode(query);
       const noteId = decodedNote.data;
@@ -52,7 +52,7 @@ const Search = () => {
 
     // fetchEvent takes a type of NDKFilter
     // see node_modules/@nostr-dev-kit/ndk/dist/index.d.ts --> "type NDKFilter"
-    return await ndk.fetchEvent(filter0) && await ndk.fetchEvents(filter1);
+    return await ndk.fetchEvent(filter0);
   };
 
   const handleSearch = async (query) => {
@@ -76,7 +76,7 @@ const Search = () => {
         />
         <button onClick={() => handleSearch(input)} className="bg-white text-black rounded-2xl">Search</button>
       </div>
-      {/*<Event event={ndkEvent} />*/}
+      <Event event={ndkEvent0} />
       <hr />
     </div>
   );
