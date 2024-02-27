@@ -15,7 +15,8 @@ export default function Event({ event }) {
           <div className="p-6 flex border border-white rounded-2xl max-w-4xl">
             <img className="rounded-full h-32 w-32" src={parsed.picture} alt="" />
             <div className="mx-4 my-auto">
-                <h3 className="text-3xl font-semibold mb-2">{parsed.name}</h3>
+                <h3 className="text-3xl font-semibold mb-1">{parsed.name}</h3>
+                <p className="mb-2">{parsed.nip05}</p>
                 <p>{parsed.about}</p>
             </div>
           </div>

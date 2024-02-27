@@ -65,7 +65,7 @@ const Search = () => {
 
   return (
     <div className={`${styles.search}`}>
-      <h2>Search</h2>
+      <h2 className="text-4xl">Search Nostr</h2>
       <p>Search for a profile by npub... or a note by note...</p>
       <div className={`${styles.searchBar}`}>
         <input
@@ -74,7 +74,7 @@ const Search = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={() => handleSearch(input)} className="bg-white text-black rounded-2xl">Search</button>
+        <button onClick={() => handleSearch(input)} className="bg-white text-black rounded-2xl hover:bg-gray-700 hover:text-white">Search</button>
       </div>
       <Event event={ndkEvent0} />
       <hr />
